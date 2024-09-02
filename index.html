@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaamkari - Cotton Kurta Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <style>
+        :root {
+            --primary-color: #e07f9f; /* Pink shade */
+            --secondary-color: #6a8e8b; /* Green shade */
+            --background-color: #faf8f0; /* White shade */
+            --hero-text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        header {
+            background: var(--secondary-color); /* Existing green shade */
+            color: #fff;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+        header.scrolled {
+            background: #6a8e8b;; /* Updated color */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center align the content */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+        .logo-image {
+            width: 240px; /* Adjusted size for better balance */
+            height: auto;
+            z-index: 2; /* Ensure logo is above other elements */
+            border-radius: 12px; /* Added rounded corners */
+        }
+        .header-nav {
+            position: absolute;
+            right: 20px; /* Align navigation to the right */
+            top: 50%;
+            transform: translateY(-50%); /* Center navigation vertically */
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 400;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        nav a:hover {
+            color: #d1e0d4;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        .hero {
+            background: url('back.png') no-repeat center center/cover;
+            height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow);
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+        .hero-content:hover {
+            transform: scale(1.05);
+        }
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-family: 'Great Vibes', cursive;
+            text-shadow: var(--hero-text-shadow);
+        }
+        .hero p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .hero .cta-button {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+            box-shadow: var(--box-shadow);
+        }
+        .hero .cta-button:hover {
+            background-color: #d06476;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            transform: scale(1.05);
+        }
+        .collection {
+    text-align: center;
+    margin: 40px 0;
+    background-color: #eaf1eb;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+}
+
+.collection h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-family: 'Great Vibes', cursive;
+}
+
+.collection-slider {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.collection-item {
+    padding: 5px;
+    box-shadow: var(--box-shadow);
+    border-radius: 8px;
+    background-color: #fff;
+    text-align: left;
+}
+
+.collection-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.collection-item img:hover {
+    transform: scale(1.05);
+}
+
+.collection-item h3 {
+    margin-top: 5px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.collection-item p {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+        .contact {
+            background-color: #fff;
+            color: #333;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 20px auto;
+            border-radius: 12px;
+            max-width: 800px;
+            box-shadow: var(--box-shadow);
+        }
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-family: 'Great Vibes', cursive;
+        }
+        .contact p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 0 auto 15px;
+        }
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        .footer-social {
+            margin-top: 10px;
+        }
+        .footer-social a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        .footer-social a:hover {
+            text-decoration: underline;
+        }
+        .back-to-top {
+            display: none; /* Hide the button by default */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 12px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .back-to-top:hover {
+            background-color: #d06476;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="logo.png" alt="Kaamkari Logo" class="logo-image">
+            <div class="header-nav">
+                <nav>
+                    <a href="#home">Home</a>
+                    <a href="#collection">Collection</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Kaamkari</h2>
+            <p>Discover our exclusive collection of cotton kurtas, designed to bring elegance and comfort to your wardrobe.</p>
+            <a href="#collection" class="cta-button">Shop Now</a>
+        </div>
+    </section>
+
+    <section id="collection" class="collection">
+        <h2>Our Collection</h2>
+        <div class="collection-slider">
+            <div class="collection-item">
+                <img src="1.jpeg" alt="Kurta 1">
+                <h3>Kurtas A</h3>
+                <p><strong>Description:</strong> 3 piece suit set</p>
+                <p><strong>Fabric:</strong> Cotton</p>
+                <p><strong>Colour:</strong> Maroon</p>
+                <p><strong>Available in:</strong> All sizes</p>
+                <p><strong>Price:</strong> $40</p>
+            </div>
+            <div class="collection-item">
+                <img src="2.jpeg" alt="Kurta 2">
+                <h3>Kurtas B</h3>
+                <p><strong>Description:</strong> 3 piece suit set</p>
+                <p><strong>Fabric:</strong> Cotton</p>
+                <p><strong>Colour:</strong> Blue</p>
+                <p><strong>Available in:</strong> All sizes</p>
+                <p><strong>Price:</strong> $45</p>
+            </div>
+            <div class="collection-item">
+                <img src="3.jpeg" alt="Kurta 3">
+                <h3>Kurtas C</h3>
+                <p><strong>Description:</strong> 3 piece suit set</p>
+                <p><strong>Fabric:</strong> Cotton</p>
+                <p><strong>Colour:</strong> Green</p>
+                <p><strong>Available in:</strong> All sizes</p>
+                <p><strong>Price:</strong> $50</p>
+            </div>
+            <div class="collection-item">
+                <img src="4.jpeg" alt="Kurta 4">
+                <h3>Kurtas D</h3>
+                <p><strong>Description:</strong> 3 piece suit set</p>
+                <p><strong>Fabric:</strong> Cotton</p>
+                <p><strong>Colour:</strong> Black</p>
+                <p><strong>Available in:</strong> All sizes</p>
+                <p><strong>Price:</strong> $55</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Have any questions or need support? Reach out to us through the following contact details:</p>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:shopkaamkari@gmail.com">shopkaamkari@gmail.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+123-456-7890</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Kaamkari. All rights reserved.</p>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/shop.Kaamkari" aria-label="Instagram">Instagram</a>
+        </div>
+    </footer>
+
+    <div class="back-to-top" onclick="scrollToTop()">↑</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.collection-slider').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: true,
+                dots: true
+            });
+
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 50) {
+                    $('header').addClass('scrolled');
+                } else {
+                    $('header').removeClass('scrolled');
+                }
+
+                // Check if footer is in view
+                var footer = $('footer');
+                var footerOffset = footer.offset().top;
+                var footerHeight = footer.outerHeight();
+                var windowHeight = $(window).height();
+                var scrollTop = $(window).scrollTop();
+
+                if (scrollTop + windowHeight > footerOffset + footerHeight / 2) {
+                    $('.back-to-top').fadeIn();
+                } else {
+                    $('.back-to-top').fadeOut();
+                }
+            });
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
