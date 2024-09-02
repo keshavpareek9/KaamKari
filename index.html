@@ -27,10 +27,11 @@ body {
     scroll-behavior: smooth;
 }
 
+/* Header Styles */
 header {
     background: var(--secondary-color);
     color: #fff;
-    padding: 15px 0;
+    padding: 10px 0; /* Reduced padding */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -38,26 +39,65 @@ header {
     transition: background 0.3s, box-shadow 0.3s;
 }
 
-header.scrolled {
-    background: #6a8e8b;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
 .header-container {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Space between logo and navigation */
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    justify-content: center; /* Center horizontally */
     position: relative;
 }
 
 .logo-image {
-    width: 180px; /* Adjusted size for better balance */
+    width: 140px; /* Adjusted size for better balance */
     height: auto;
     z-index: 2;
     border-radius: 12px;
+}
+
+.header-nav {
+    display: flex;
+    position: absolute;
+    right: 20px; /* Adjust the distance from the right edge */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    margin: 0 8px; /* Adjusted spacing */
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover {
+    color: #d1e0d4;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px; /* Adjusted padding */
+    }
+
+    .header-nav {
+        position: relative;
+        margin-top: 10px;
+        right: 0;
+        top: 0;
+        transform: none;
+    }
+
+    .logo-image {
+        width: 120px; /* Adjusted size */
+    }
 }
 
 .header-nav {
@@ -70,7 +110,7 @@ nav {
 }
 
 nav a {
-    margin: 0 10px;
+    margin: 0 8px; /* Adjusted spacing */
     text-decoration: none;
     color: #fff;
     font-weight: 400;
@@ -84,7 +124,7 @@ nav a:hover {
 
 .hero {
     background: url('back.png') no-repeat center center/cover;
-    height: 500px;
+    height: 400px; /* Adjusted height */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -122,7 +162,7 @@ nav a:hover {
 }
 
 .hero h2 {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Adjusted font size */
     margin-bottom: 10px;
     font-weight: 600;
     font-family: 'Great Vibes', cursive;
@@ -130,7 +170,7 @@ nav a:hover {
 }
 
 .hero p {
-    font-size: 1rem;
+    font-size: 0.9rem; /* Adjusted font size */
     line-height: 1.6;
     margin-bottom: 20px;
 }
@@ -138,9 +178,9 @@ nav a:hover {
 .hero .cta-button {
     background-color: var(--primary-color);
     color: #fff;
-    padding: 12px 24px;
+    padding: 10px 20px; /* Adjusted padding */
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Adjusted font size */
     border-radius: 8px;
     transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
     box-shadow: var(--box-shadow);
@@ -304,87 +344,40 @@ footer p {
     }
 
     .logo-image {
-        width: 150px;
+        width: 120px; /* Adjusted size */
     }
 
     .hero {
-        height: 400px;
+        height: 300px; /* Adjusted height */
     }
 
     .hero h2 {
-        font-size: 2rem;
+        font-size: 1.5rem; /* Adjusted font size */
     }
 
     .hero p {
-        font-size: 0.9rem;
+        font-size: 0.8rem; /* Adjusted font size */
     }
 
     .hero .cta-button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        padding: 8px 16px; /* Adjusted padding */
+        font-size: 0.8rem; /* Adjusted font size */
     }
 
     .collection h2 {
-        font-size: 1.8rem;
-    }
-
-    .collection-slider {
-        width: 100%;
+        font-size: 1.5rem; /* Adjusted font size */
     }
 
     .collection-item {
-        padding: 10px;
-    }
-
-    .collection-item h3 {
-        font-size: 0.9rem;
+        padding: 5px; /* Adjusted padding */
     }
 
     .contact h2 {
-        font-size: 1.6rem;
+        font-size: 1.4rem; /* Adjusted font size */
     }
 
     .contact p {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content {
-        padding: 10px;
-    }
-
-    .hero h2 {
-        font-size: 1.5rem;
-    }
-
-    .hero p {
-        font-size: 0.8rem;
-    }
-
-    .hero .cta-button {
-        padding: 8px 16px;
-        font-size: 0.8rem;
-    }
-
-    .collection-item {
-        padding: 5px;
-    }
-
-    .collection-item img {
-        max-width: 100%;
-    }
-
-    .contact {
-        padding: 20px 10px;
-    }
-
-    .contact h2 {
-        font-size: 1.4rem;
-    }
-
-    .contact p {
-        font-size: 0.8rem;
+        font-size: 0.8rem; /* Adjusted font size */
     }
 }
 
