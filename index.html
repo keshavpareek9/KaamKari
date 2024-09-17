@@ -371,11 +371,8 @@ footer p {
     </header>
     <div class="hero">
         <div class="video-left">
-            <video width="100%" height="auto" controls autoplay muted>
+            <video width="100%" height="auto" controls muted playsinline>
                 <source src="IMG_5684.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            
                 Your browser does not support the video tag.
             </video>
         </div>  
@@ -385,7 +382,7 @@ footer p {
             <a href="https://wa.me/9082585739" class="cta-button" target="_blank">Shop Now</a> <!-- WhatsApp Shop Now Button -->
         </div>   
         <div class="video-right">
-            <video width="100%" height="auto" controls autoplay muted>
+            <video width="100%" height="auto" controls muted playsinline>
                 <source src="IMG_5559.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -564,21 +561,26 @@ footer p {
         });
     </script>
     <script>
-       document.addEventListener('DOMContentLoaded', () => {
+   document.addEventListener('DOMContentLoaded', () => {
     const videos = document.querySelectorAll('.video-left video, .video-right video');
-
-    // Play video on click
+    
     videos.forEach(video => {
-        video.addEventListener('click', () => {
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
-                video.currentTime = 0; // Reset video to start
-            }
+        video.play().catch(error => {
+            // Handle the error (if autoplay is not allowed)
+            console.log('Autoplay prevented:', error);
+        });
+
+        video.addEventListener('mouseover', () => {
+            video.play(); // Play video on hover
+        });
+
+        video.addEventListener('mouseout', () => {
+            video.pause(); // Pause video when not hovering
+            video.currentTime = 0; // Reset video to start
         });
     });
 });
+
 
     </script>
     
