@@ -385,6 +385,86 @@ footer p {
     color: #333;
     font-weight: 600;
 }
+.cta-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 24px; /* Adjusted padding for a more prominent button */
+    text-decoration: none;
+    font-size: 1.2rem; /* Larger font size for the button */
+    border-radius: 8px;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    box-shadow: var(--box-shadow);
+    font-weight: 600; /* Bold text for emphasis */
+    margin-bottom: 20px; /* Added margin for spacing above the collection */
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #d06476;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+}
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.collection {
+    padding: 20px;
+}
+
+.collection-item {
+    margin-bottom: 20px;
+}
+
+.collection-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #527073;
+    color: #faf8f0;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.cta-button:hover {
+    background-color: #e07f9f;
+}
+
+/* Pagination styling */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.page-link {
+    margin: 0 5px;
+    padding: 10px 15px;
+    background-color: #527073;
+    color: #faf8f0;
+    border: none;
+    cursor: pointer;
+}
+
+.page-link:hover {
+    background-color: #e07f9f;
+}
+
 
 
 
@@ -435,7 +515,6 @@ footer p {
         <div class="hero-content">
             <h1>Welcome to Kaamkari</h1>
             <p>Your story woven in threads</p>
-            <a href="https://wa.me/9082585739" class="cta-button" target="_blank">Shop Now</a> <!-- WhatsApp Shop Now Button -->
         </div>   
         <div class="video-right">
             <video width="100%" height="auto" controls muted playsinline>
@@ -445,120 +524,131 @@ footer p {
         </div>
     </div>
     
-      <section id="collection" class="collection">
+    <section id="collection" class="collection">
         <h2>Our Collection</h2>
-        
-        <!-- Kurta 1 -->
-        <div class="collection-item">
-            <img src="1.jpeg" alt="Kurta 1">
-            <h3>Elegant 3-Piece Cotton Suit Set</h3>
-            <p><strong>Description:</strong> Featuring a timeless block print design, this suit set offers a blend of traditional artistry and modern comfort.</p>
-            <p><strong>Fabric:</strong> Pure Cotton for breathable comfort.</p>
-            <p><strong>Color:</strong> Black.</p>
-            <p><strong>Available Size:</strong> XL</p>
-            <p><strong>Price:</strong> ₹1,280</p>
+        <p>Click below to place order</p>
+        <a href="https://wa.me/9082585739" class="cta-button" target="_blank">Shop Now</a>
+
+        <div id="page1" class="page active">
+            <!-- Kurta 1 -->
+            <div class="collection-item">
+                <img src="1.jpeg" alt="Kurta 1">
+                <h3>Elegant 3-Piece Cotton Suit Set</h3>
+                <p><strong>Description:</strong> Featuring a timeless block print design, this suit set offers a blend of traditional artistry and modern comfort.</p>
+                <p><strong>Fabric:</strong> Pure Cotton for breathable comfort.</p>
+                <p><strong>Color:</strong> Black.</p>
+                <p><strong>Available Size:</strong> XL</p>
+                <p><strong>Price:</strong> ₹1,280</p>
+            </div>
+            <!-- Kurta 2 -->
+            <div class="collection-item">
+                <img src="2.jpeg" alt="Kurta 2">
+                <h3>Graceful 2-Piece Cotton Suit Set</h3>
+                <p><strong>Description:</strong> A simple yet elegant 2-piece suit set with kantha embroidery.</p>
+                <p><strong>Fabric:</strong> Soft, breathable Cotton for all-day comfort.</p>
+                <p><strong>Color:</strong> Pink.</p>
+                <p><strong>Available Size:</strong> XXL, XXXL</p>
+                <p><strong>Price:</strong> ₹1,280</p>
+            </div>
+            <!-- Kurta 3 -->
+            <div class="collection-item">
+                <img src="3.jpeg" alt="Kurta 3">
+                <h3>Stylish 3-Piece Cotton Suit Set</h3>
+                <p><strong>Description:</strong> A vibrant 3-piece suit set that combines style and comfort for any occasion.</p>
+                <p><strong>Fabric:</strong> Premium Cotton for a lightweight and breathable feel.</p>
+                <p><strong>Color:</strong> Red.</p>
+                <p><strong>Available Size:</strong> M, L, XL, XXL</p>
+                <p><strong>Price:</strong> ₹1,680</p>
+            </div>
+            <!-- Kurta 4 -->
+            <div class="collection-item">
+                <img src="4.jpeg" alt="Kurta 4">
+                <h3>Elegant 3-Piece Sea Green Suit Set</h3>
+                <p><strong>Description:</strong> A chic 3-piece suit set, designed for both style and comfort.</p>
+                <p><strong>Fabric:</strong> Soft, breathable Cotton for ultimate comfort.</p>
+                <p><strong>Color:</strong> Sea Green.</p>
+                <p><strong>Available Size:</strong> M, L, XL, XXL</p>
+                <p><strong>Price:</strong> ₹1,280</p>
+            </div>
         </div>
-        
-        <!-- Kurta 2 -->
-        <div class="collection-item">
-            <img src="2.jpeg" alt="Kurta 2">
-            <h3>Graceful 2-Piece Cotton Suit Set</h3>
-            <p><strong>Description:</strong> A simple yet elegant 2-piece suit set with kantha embroidery.</p>
-            <p><strong>Fabric:</strong> Soft, breathable Cotton for all-day comfort.</p>
-            <p><strong>Color:</strong> Pink.</p>
-            <p><strong>Available Size:</strong> XXL, XXXL</p>
-            <p><strong>Price:</strong> ₹1,280</p>
+
+        <div id="page2" class="page">
+            <!-- Kurta 5 -->
+            <div class="collection-item">
+                <img src="5.jpeg" alt="Kurta 5">
+                <h3>Bold Red 3-Piece Suit Set</h3>
+                <p><strong>Description:</strong> A striking 3-piece suit set designed for those who love bold and vibrant colors.</p>
+                <p><strong>Fabric:</strong> Cotton, Dupatta - Mul cotton.</p>
+                <p><strong>Color:</strong> Bold Red.</p>
+                <p><strong>Available Size:</strong> XL</p>
+                <p><strong>Price:</strong> ₹1,280</p>
+            </div>
+            <!-- Kurta 6 -->
+            <div class="collection-item">
+                <img src="6.jpeg" alt="Kurta 6">
+                <h3>Peach Anarkali 3-Piece Suit Set</h3>
+                <p><strong>Description:</strong> A graceful 3-piece suit set made from luxurious Organza fabric, designed for an elegant look.</p>
+                <p><strong>Fabric:</strong> Organza, known for its delicate and lightweight texture.</p>
+                <p><strong>Color:</strong> Peach.</p>
+                <p><strong>Available Size:</strong> M, L, XL, XXL</p>
+                <p><strong>Price:</strong> ₹2,480</p>
+            </div>
+            <!-- Kurta 7 -->
+            <div class="collection-item">
+                <img src="7.jpeg" alt="Kurta 7">
+                <h3>Cotton Dress with Peach Floral Accents</h3>
+                <p><strong>Description:</strong> A stylish one-piece cotton dress featuring a white base adorned with delicate peach floral pattern.</p>
+                <p><strong>Fabric:</strong> Soft and breathable Cotton.</p>
+                <p><strong>Color:</strong> White with Peach floral accents.</p>
+                <p><strong>Available Size:</strong> M, L</p>
+                <p><strong>Price:</strong> ₹600</p>
+            </div>
+            <!-- Kurta 8 -->
+            <div class="collection-item">
+                <img src="8.jpeg" alt="Kurta 8">
+                <h3>Vibrant Red Anarkali 3-Piece Suit Set</h3>
+                <p><strong>Description:</strong> A bold and vibrant 3-piece Anarkali suit set designed to make a statement.</p>
+                <p><strong>Fabric:</strong> Cotton with a Kota Doriya dupatta for added elegance and comfort.</p>
+                <p><strong>Color:</strong> Red.</p>
+                <p><strong>Available Size:</strong> M, XL, XXL</p>
+                <p><strong>Price:</strong> ₹2,280</p>
+            </div>
         </div>
-        
-        <!-- Kurta 3 -->
-        <div class="collection-item">
-            <img src="3.jpeg" alt="Kurta 3">
-            <h3>Stylish 3-Piece Cotton Suit Set</h3>
-            <p><strong>Description:</strong> A vibrant 3-piece suit set that combines style and comfort for any occasion.</p>
-            <p><strong>Fabric:</strong> Premium Cotton for a lightweight and breathable feel.</p>
-            <p><strong>Color:</strong> Red.</p>
-            <p><strong>Available Size:</strong> M, L, XL, XXL</p>
-            <p><strong>Price:</strong> ₹1,680</p>
+
+        <div id="page3" class="page">
+            <!-- Kurta 9 -->
+            <div class="collection-item">
+                <img src="9.jpeg" alt="Kurta 9">
+                <h3>Cream Floral 3-Piece Suit Set</h3>
+                <p><strong>Description:</strong> A charming 3-piece suit set featuring a beautiful cream floral pattern, perfect for adding a touch of elegance to your wardrobe.</p>
+                <p><strong>Fabric:</strong> Comfortable and breathable Cotton.</p>
+                <p><strong>Color:</strong> Cream with a delicate floral design.</p>
+                <p><strong>Available Size:</strong> M</p>
+                <p><strong>Price:</strong> ₹1,180</p>
+            </div>
+            <!-- Kurta 10 -->
+            <div class="collection-item">
+                <img src="10.jpeg" alt="Kurta 10">
+                <h3>Green Floral Co-Ord Set</h3>
+                <p><strong>Description:</strong> A stylish co-ord set featuring a green base with a vibrant floral print, offering both comfort and elegance.</p>
+                <p><strong>Fabric:</strong> Soft and breathable Cotton.</p>
+                <p><strong>Color:</strong> Green base with an eye-catching floral print.</p>
+                <p><strong>Available Size:</strong> M, XL, XXL</p>
+                <p><strong>Price:</strong> ₹880</p>
+            </div>
+            <!-- Kurta 11 and 12 if needed -->
         </div>
-        
-        <!-- Kurta 4 -->
-        <div class="collection-item">
-            <img src="4.jpeg" alt="Kurta 4">
-            <h3>Elegant 3-Piece Sea Green Suit Set</h3>
-            <p><strong>Description:</strong> A chic 3-piece suit set, designed for both style and comfort.</p>
-            <p><strong>Fabric:</strong> Soft, breathable Cotton for ultimate comfort.</p>
-            <p><strong>Color:</strong> Sea Green.</p>
-            <p><strong>Available Size:</strong> M, L, XL, XXL</p>
-            <p><strong>Price:</strong> ₹1,280</p>
+
+        <!-- Pagination controls -->
+        <div class="pagination">
+            <button class="page-link" onclick="showPage(1)">Page 1</button>
+            <button class="page-link" onclick="showPage(2)">Page 2</button>
+            <button class="page-link" onclick="showPage(3)">Page 3</button>
         </div>
-        
-        <!-- Kurta 5 -->
-        <div class="collection-item">
-            <img src="5.jpeg" alt="Kurta 5">
-            <h3>Bold Red 3-Piece Suit Set</h3>
-            <p><strong>Description:</strong> A striking 3-piece suit set designed for those who love bold and vibrant colors.</p>
-            <p><strong>Fabric:</strong> Cotton, Dupatta - Mul cotton.</p>
-            <p><strong>Color:</strong> Bold Red.</p>
-            <p><strong>Available Size:</strong> XL</p>
-            <p><strong>Price:</strong> ₹1,280</p>
-        </div>
-        
-        <!-- Kurta 6 -->
-        <div class="collection-item">
-            <img src="6.jpeg" alt="Kurta 6">
-            <h3>Peach Anarkali 3-Piece Suit Set</h3>
-            <p><strong>Description:</strong> A graceful 3-piece suit set made from luxurious Organza fabric, designed for an elegant look.</p>
-            <p><strong>Fabric:</strong> Organza, known for its delicate and lightweight texture.</p>
-            <p><strong>Color:</strong> Peach.</p>
-            <p><strong>Available Size:</strong> M, L, XL, XXL</p>
-            <p><strong>Price:</strong> ₹2,480</p>
-        </div>
-        
-        <!-- Kurta 7 -->
-        <div class="collection-item">
-            <img src="7.jpeg" alt="Kurta 7">
-            <h3>Cotton Dress with Peach Floral Accents</h3>
-            <p><strong>Description:</strong> A stylish one-piece cotton dress featuring a white base adorned with delicate peach floral pattern.</p>
-            <p><strong>Fabric:</strong> Soft and breathable Cotton.</p>
-            <p><strong>Color:</strong> White with Peach floral accents.</p>
-            <p><strong>Available Size:</strong> M, L</p>
-            <p><strong>Price:</strong> ₹600</p>
-        </div>
-        
-        <!-- Kurta 8 -->
-        <div class="collection-item">
-            <img src="8.jpeg" alt="Kurta 8">
-            <h3>Vibrant Red Anarkali 3-Piece Suit Set</h3>
-            <p><strong>Description:</strong> A bold and vibrant 3-piece Anarkali suit set designed to make a statement.</p>
-            <p><strong>Fabric:</strong> Cotton with a Kota Doriya dupatta for added elegance and comfort.</p>
-            <p><strong>Color:</strong> Red.</p>
-            <p><strong>Available Size:</strong> M, XL, XXL</p>
-            <p><strong>Price:</strong> ₹2,280</p>
-        </div>
-        
-        <!-- Kurta 9 -->
-        <div class="collection-item">
-            <img src="9.jpeg" alt="Kurta 9">
-            <h3>Cream Floral 3-Piece Suit Set</h3>
-            <p><strong>Description:</strong> A charming 3-piece suit set featuring a beautiful cream floral pattern, perfect for adding a touch of elegance to your wardrobe.</p>
-            <p><strong>Fabric:</strong> Comfortable and breathable Cotton.</p>
-            <p><strong>Color:</strong> Cream with a delicate floral design.</p>
-            <p><strong>Available Size:</strong> M</p>
-            <p><strong>Price:</strong> ₹1,180</p>
-        </div>
-        
-        <!-- Kurta 10 -->
-        <div class="collection-item">
-            <img src="10.jpeg" alt="Kurta 10">
-            <h3>Green Floral Co-Ord Set</h3>
-            <p><strong>Description:</strong> A stylish co-ord set featuring a green base with a vibrant floral print, offering both comfort and elegance.</p>
-            <p><strong>Fabric:</strong> Soft and breathable Cotton.</p>
-            <p><strong>Color:</strong> Green base with an eye-catching floral print.</p>
-            <p><strong>Available Size:</strong> M, XL, XXL</p>
-            <p><strong>Price:</strong> ₹880</p>
-        </div>
-        
-   
+    </section>
+
+    <script src="script.js"></script>
+</body>
     
     <section class="contact" id="contact">
         <h2>Contact Us</h2>
@@ -636,8 +726,22 @@ footer p {
     });
 });
 
+function showPage(pageNumber) {
+    // Hide all pages
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => {
+        page.classList.remove('active');
+    });
+
+    // Show the selected page
+    document.getElementById(`page${pageNumber}`).classList.add('active');
+}
+
+// Initialize the first page as visible
+showPage(1);
 
     </script>
+    
     
 </body>
 </html>
